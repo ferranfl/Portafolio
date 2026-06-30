@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio web bento de Ferran, desarrollador Full Stack y estudiante de DAW.">
+    <title>Ferran Fariña Lezcano | Full Stack Developer & DAW Student</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cyber-grid-overlay"></div>
+    <div class="glow-effects">
+        <div class="glow-sphere glow-cyan"></div>
+        <div class="glow-sphere glow-purple"></div>
+    </div>
+    
+    <div class="bento-container">
+        <!-- Hero Box -->
+        <header class="bento-box hero-box cyan-glow scroll-reveal">
+            <div class="hero-left">
+                <div class="hero-header">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="es">ES</button>
+                        <span class="lang-divider">/</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1>
+                        <span class="greeting" data-translate="greeting" data-es="Hola, soy" data-en="Hi, I am">Hola, soy</span>
+                        <span class="name">Ferran Fariña Lezcano</span>
+                        <span class="role-wrapper">
+                            <span id="typewriter" class="role-text"></span><span class="cursor">|</span>
+                        </span>
+                    </h1>
+                    <p class="hero-desc" data-translate="hero-desc" data-es="Desarrollador enfocado en la administración de sistemas, infraestructura de red y creación de aplicaciones backend eficientes. Me apasiona configurar entornos en contenedores y optimizar bases de datos." data-en="Developer focused on systems administration, network infrastructure, and building efficient backend applications. I am passionate about setting up containerized environments and optimizing databases.">
+                        Desarrollador enfocado en la administración de sistemas, infraestructura de red y creación de aplicaciones backend eficientes. Me apasiona configurar entornos en contenedores y optimizar bases de datos.
+                    </p>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:contactferranfl@gmail.com" class="email-link">
+                        <i data-lucide="mail"></i> contactferranfl@gmail.com
+                    </a>
+                    <a href="#" download="CV_Ferran_Farina.pdf" class="cv-link" data-translate="download-cv" data-es="<i data-lucide='download'></i> Descargar CV" data-en="<i data-lucide='download'></i> Download CV">
+                        <i data-lucide="download"></i> Descargar CV
+                    </a>
+                    <span class="location-badge">
+                        <i data-lucide="map-pin"></i> Barcelona, ES
+                    </span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="avatar-container">
+                    <div class="avatar-placeholder">
+                        <!-- Foto futura aquí: <img src="img/foto.jpg" alt="Ferran Fariña" class="avatar-img"> -->
+                    </div>
+                    <div class="avatar-glow"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Project 1 (Widescreen 2 cols) -->
+        <article class="bento-box project-card cyan-glow scroll-reveal" data-project-id="whopaynow">
+            <div class="project-info">
+                <div class="project-tags">
+                    <span class="proj-tag">React Native</span>
+                    <span class="proj-tag">Supabase</span>
+                    <span class="proj-tag">Gemini AI</span>
+                </div>
+                <div class="project-content">
+                    <h3>WhoPayNow</h3>
+                    <p data-translate="p1-desc" data-es="Aplicación móvil inteligente para dividir gastos compartidos de forma rápida y sencilla mediante escaneo con IA." data-en="Intelligent mobile app to split group expenses easily using AI receipt scanning.">Aplicación móvil inteligente para dividir gastos compartidos de forma rápida y sencilla mediante escaneo con IA.</p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com" target="_blank" class="proj-link" aria-label="GitHub de WhoPayNow"><i data-lucide="github"></i> Code</a>
+                    <a href="#" class="proj-link" aria-label="Demo en vivo de WhoPayNow"><i data-lucide="external-link"></i> Demo</a>
+                </div>
+            </div>
+            <div class="project-image-slot mobile-slot">
+                <div class="phone-mockup-card">
+                    <div class="phone-screen-card">
+                        <img src="img/project_whopaynow_1.jpg" alt="WhoPayNow screen mockup" class="project-img">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- Skills / Tech Stack Box (Widescreen 4 cols) -->
+        <section class="bento-box skills-box emerald-glow scroll-reveal">
+            <div class="box-header">
+                <i data-lucide="cpu" class="header-icon-green"></i>
+                <h3 data-translate="skills-title" data-es="Habilidades & Stack" data-en="Skills & Stack">Habilidades & Stack</h3>
+            </div>
+            <div class="skills-categories-compact">
+                <div class="skills-cat">
+                    <h4 data-translate="cat-front" data-es="Frontend" data-en="Frontend">Frontend</h4>
+                    <div class="skills-list">
+                        <span class="skill-item" style="--skill-color: #e34c26" title="HTML5"><i data-lucide="code-2"></i> HTML</span>
+                        <span class="skill-item" style="--skill-color: #264de4" title="CSS3"><i data-lucide="paint-bucket"></i> CSS</span>
+                        <span class="skill-item" style="--skill-color: #f7df1e" title="JavaScript"><i data-lucide="braces"></i> JavaScript</span>
+                        <span class="skill-item" style="--skill-color: #3178c6" title="TypeScript"><i data-lucide="code"></i> TypeScript</span>
+                        <span class="skill-item" style="--skill-color: #a0a0a0" title="XML"><i data-lucide="file-code"></i> XML</span>
+                        <span class="skill-item" style="--skill-color: #61dafb" title="React Native"><i data-lucide="smartphone"></i> React Native</span>
+                        <span class="skill-item" style="--skill-color: #06b6d4" title="Tailwind CSS"><i data-lucide="palette"></i> Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skills-cat">
+                    <h4 data-translate="cat-back" data-es="Backend & DB" data-en="Backend & DB">Backend & DB</h4>
+                    <div class="skills-list">
+                        <span class="skill-item" style="--skill-color: #339933" title="Node.js"><i data-lucide="server"></i> Node</span>
+                        <span class="skill-item" style="--skill-color: #ed8b00" title="Java"><i data-lucide="coffee"></i> Java</span>
+                        <span class="skill-item" style="--skill-color: #00758f" title="MySQL"><i data-lucide="database"></i> MySQL</span>
+                        <span class="skill-item" style="--skill-color: #336791" title="PostgreSQL"><i data-lucide="database-backup"></i> Postgres</span>
+                        <span class="skill-item" style="--skill-color: #3ecf8e" title="Supabase"><i data-lucide="zap"></i> Supabase</span>
+                    </div>
+                </div>
+                <div class="skills-cat">
+                    <h4 data-translate="cat-tools" data-es="Herramientas" data-en="Tools">Herramientas</h4>
+                    <div class="skills-list">
+                        <span class="skill-item" style="--skill-color: #f05032" title="Git"><i data-lucide="git-branch"></i> Git</span>
+                        <span class="skill-item" style="--skill-color: #2496ed" title="Docker"><i data-lucide="container"></i> Docker</span>
+                        <span class="skill-item" style="--skill-color: #4ebd37" title="Bash Scripting"><i data-lucide="terminal"></i> Bash</span>
+                        <span class="skill-item" style="--skill-color: #4285f4" title="Gemini AI"><i data-lucide="sparkles"></i> Gemini AI</span>
+                        <span class="skill-item" style="--skill-color: #ffffff" title="Expo Go"><i data-lucide="layers"></i> Expo Go</span>
+                    </div>
+                </div>
+                <div class="skills-cat">
+                    <h4 data-translate="cat-soft" data-es="Blandas" data-en="Soft Skills">Blandas</h4>
+                    <div class="skills-list">
+                        <span class="skill-item" style="--skill-color: #a855f7" title="Comunicación" data-translate="soft-comm" data-es="<i data-lucide='message-square'></i> Comunicación" data-en="<i data-lucide='message-square'></i> Communication"><i data-lucide="message-square"></i> Comunicación</span>
+                        <span class="skill-item" style="--skill-color: #3b82f6" title="Trabajo en Equipo" data-translate="soft-team" data-es="<i data-lucide='users'></i> Teamwork" data-en="<i data-lucide='users'></i> Teamwork"><i data-lucide="users"></i> Teamwork</span>
+                        <span class="skill-item" style="--skill-color: #ef4444" title="Resolución de Problemas" data-translate="soft-prob" data-es="<i data-lucide='brain'></i> Resolutivo" data-en="<i data-lucide='brain'></i> Problem Solver"><i data-lucide="brain"></i> Resolutivo</span>
+                        <span class="skill-item" style="--skill-color: #10b981" title="Adaptabilidad" data-translate="soft-adapt" data-es="<i data-lucide='git-commit'></i> Adaptabilidad" data-en="<i data-lucide='git-commit'></i> Adaptability"><i data-lucide="git-commit"></i> Adaptabilidad</span>
+                        <span class="skill-item" style="--skill-color: #eab308" title="Aprendizaje Rápido" data-translate="soft-learn" data-es="<i data-lucide='book-open'></i> Aprendizaje Rápido" data-en="<i data-lucide='book-open'></i> Quick Learner"><i data-lucide="book-open"></i> Aprendizaje Rápido</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Box (Widescreen 4 cols) -->
+        <section class="bento-box certifications-box cyan-glow scroll-reveal">
+            <div class="box-header">
+                <i data-lucide="award" class="header-icon-cyan"></i>
+                <h3 data-translate="cert-title" data-es="Certificaciones Oficiales" data-en="Official Certifications">Certificaciones Oficiales</h3>
+            </div>
+            <div class="certifications-grid">
+                <!-- Certificaciones vacías por el momento -->
+            </div>
+        </section>
+
+        <!-- Education & Timeline Box (Widescreen 2 cols) -->
+        <section class="bento-box timeline-box purple-glow scroll-reveal">
+            <div class="box-header">
+                <i data-lucide="graduation-cap" class="header-icon-purple"></i>
+                <h3 data-translate="edu-title" data-es="Educación & Formación" data-en="Education & Background">Educación & Formación</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-translate="t1-date" data-es="2026 - Presente" data-en="2026 - Present">2026 - Presente</span>
+                        <h5>C.F.G.S. Administració de Sistemes Informàtics en Xarxa (ASIX)</h5>
+                        <p class="timeline-institution">Institut Puig Castellar</p>
+                        <p class="timeline-desc" data-translate="t1-desc" data-es="Formación orientada a la administración de sistemas operativos, seguridad informática, servicios de red y entornos cloud." data-en="Training focused on OS administration, cybersecurity, network services, and cloud environments.">Formación orientada a la administración de sistemas operativos, seguridad informática, servicios de red y entornos cloud.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2026</span>
+                        <h5>C.F.G.S. Desarrollo de Aplicaciones Web (DAW)</h5>
+                        <p class="timeline-institution">Escola del Treball de Barcelona</p>
+                        <p class="timeline-desc" data-translate="t2-desc" data-es="Especialización en desarrollo Frontend, Backend, patrones de diseño y despliegue." data-en="Specialization in Frontend, Backend, design patterns, and deployment.">Especialización en desarrollo Frontend, Backend, patrones de diseño y despliegue.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2024</span>
+                        <h5>C.F.G.M. Sistemes Microinformàtics i Xarxes (SMIX)</h5>
+                        <p class="timeline-institution">Institut Tecnològic de Barcelona (ITB)</p>
+                        <p class="timeline-desc" data-translate="t3-desc" data-es="Fundamentos de redes de computadores, montaje de hardware y administración de SO." data-en="Fundamentals of computer networks, hardware assembly, and OS administration.">Fundamentos de redes de computadores, montaje de hardware y administración de SO.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline Box (Widescreen 2 cols) -->
+        <section class="bento-box timeline-box purple-glow scroll-reveal">
+            <div class="box-header">
+                <i data-lucide="briefcase" class="header-icon-purple"></i>
+                <h3 data-translate="exp-title" data-es="Experiencia Laboral" data-en="Work Experience">Experiencia Laboral</h3>
+            </div>
+            <div class="timeline">
+                <!-- Entry 1: BAU Contract (Current) -->
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-translate="exp1-date" data-es="Marzo de 2026 - Presente" data-en="Marzo de 2026 - Presente">Marzo de 2026 - Presente</span>
+                        <h5 data-translate="exp1-role" data-es="Desarrollador de Aplicaciones & Web" data-en="Desarrollador de Aplicaciones & Web">Desarrollador de Aplicaciones & Web</h5>
+                        <p class="timeline-institution" data-translate="exp1-company" data-es="BAU — Centro Universitario de Artes y Diseño de Barcelona" data-en="BAU — Centro Universitario de Artes y Diseño de Barcelona">BAU — Centro Universitario de Artes y Diseño de Barcelona</p>
+                        <p class="timeline-desc" data-translate="exp1-desc" data-es="Transición a contrato regular. Responsable de la gestión y optimización de las aplicaciones y portales web de la universidad, liderando el desarrollo continuo del sistema de administración interna." data-en="Transición a contrato regular. Responsable de la gestión y optimización de las aplicaciones y portales web de la universidad, liderando el desarrollo continuo del sistema de administración interna.">Transición a contrato regular. Responsable de la gestión y optimización de las aplicaciones y portales web de la universidad, liderando el desarrollo continuo del sistema de administración interna.</p>
+                    </div>
+                </div>
+                <!-- Entry 2: BAU Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-translate="exp2-date" data-es="Julio de 2025 - Febrero de 2026" data-en="Julio de 2025 - Febrero de 2026">Julio de 2025 - Febrero de 2026</span>
+                        <h5 data-translate="exp2-role" data-es="Desarrollador de Aplicaciones & Web (Prácticas)" data-en="Desarrollador de Aplicaciones & Web (Prácticas)">Desarrollador de Aplicaciones & Web (Prácticas)</h5>
+                        <p class="timeline-institution" data-translate="exp2-company" data-es="BAU — Centro Universitario de Artes y Diseño de Barcelona" data-en="BAU — Arts and Design College of Barcelona">BAU — Centro Universitario de Artes y Diseño de Barcelona</p>
+                        <p class="timeline-desc" data-translate="exp2-desc" data-es="Gestión de las plataformas web y aplicaciones de la universidad, además del diseño y desarrollo de una nueva aplicación para la gestión interna universitaria." data-en="Gestión de las plataformas web y aplicaciones de la universidad, además del diseño y desarrollo de una nueva aplicación para la gestión interna universitaria.">Gestión de las plataformas web y aplicaciones de la universidad, además del diseño y desarrollo de una nueva aplicación para la gestión interna universitaria.</p>
+                    </div>
+                </div>
+                <!-- Entry 3: VINOR SERVIZ LTD -->
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-translate="exp3-date" data-es="Junio de 2023" data-en="June 2023">Junio de 2023</span>
+                        <h5 data-translate="exp3-role" data-es="Técnico de Soporte TI (Prácticas)" data-en="IT Support Technician (Internship)">Técnico de Soporte TI (Prácticas)</h5>
+                        <p class="timeline-institution">VINOR SERVIZ LTD — Sofia (Bulgaria)</p>
+                        <p class="timeline-desc" data-translate="exp3-desc" data-es="Prácticas enfocadas en el mantenimiento y reparación de ordenadores, configuración y administración de redes locales, y soporte en herramientas de ofimática. Funciones y comunicación realizadas íntegramente en inglés." data-en="Internship focused on computer maintenance and repair, configuration and administration of local networks, and office automation support. All duties and communication conducted entirely in English.">Prácticas enfocadas en el mantenimiento y reparación de ordenadores, configuración y administración de redes locales, y soporte en herramientas de ofimática. Funciones y comunicación realizadas íntegramente en inglés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Box (Widescreen 4 cols) -->
+        <section class="bento-box terminal-box amber-glow scroll-reveal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="terminal-title" data-translate="terminal-title" data-es="terminal.sh | Sobre Mí" data-en="terminal.sh | About Me">terminal.sh | Sobre Mí</span>
+                <i data-lucide="terminal" class="terminal-icon"></i>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="terminal-line system" id="term-sys-line" data-translate="term-sys" data-es="SISTEMA INICIALIZADO. Bienvenido a mi shell interactiva." data-en="SYSTEM INITIALIZED. Welcome to my interactive shell.">SISTEMA INICIALIZADO. Bienvenido a mi shell interactiva.</div>
+                <div class="terminal-line help-tip" id="term-help-line" data-translate="term-help" data-es="Escribe <span class='cmd-highlight'>help</span> para ver los comandos disponibles." data-en="Type <span class='cmd-highlight'>help</span> to view available commands.">Escribe <span class="cmd-highlight">help</span> para ver los comandos disponibles.</div>
+                <div id="terminal-output-container"></div>
+                <div class="terminal-input-line">
+                    <span class="prompt">guest@ferran:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" aria-label="Terminal input">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <p data-translate="footer-text" data-es="&copy; 2026 Ferran Fariña Lezcano | Administrador de Sistemas & Desarrollador Web" data-en="&copy; 2026 Ferran Fariña Lezcano | Systems Administrator & Web Developer">&copy; 2026 Ferran Fariña Lezcano | Administrador de Sistemas & Desarrollador Web</p>
+    </footer>
+
+    <!-- Project Modal Dialog -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn" aria-label="Cerrar modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div id="modal-body-content" class="modal-body-content">
+                <!-- Content dynamically injected via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
