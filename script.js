@@ -429,7 +429,7 @@ Type <span class="cmd-highlight">help</span> to view all valid commands.`;
         whopaynow: {
             title: "WhoPayNow",
             layout: "mobile",
-            images: ["img/project_whopaynow_1.jpg", "img/project_whopaynow_2.jpg", "img/project_whopaynow_3.jpg", "img/project_whopaynow_4.jpg", "img/project_whopaynow_5.jpg"],
+            images: ["img/project_whopaynow_1.jpg", "img/project_whopaynow_2.jpg", "img/project_whopaynow_3.jpg", "img/project_whopaynow_4.jpg", "img/project_whopaynow_5.jpg", "img/project_whopaynow_6.jpg"],
             tags: ["React Native", "Expo", "Supabase", "Gemini AI", "Tailwind CSS"],
             es: {
                 subtitle: "Aplicación móvil inteligente para dividir gastos compartidos",
@@ -515,18 +515,22 @@ Type <span class="cmd-highlight">help</span> to view all valid commands.`;
             `).join('');
 
             modalBodyContent.innerHTML = `
-                <div class="modal-project-header">
-                    <h2>${proj.title}</h2>
-                    <p class="modal-subtitle">${langData.subtitle}</p>
-                    <div class="project-tags">${tagsMarkup}</div>
+                <div class="modal-padded">
+                    <div class="modal-project-header">
+                        <h2>${proj.title}</h2>
+                        <p class="modal-subtitle">${langData.subtitle}</p>
+                        <div class="project-tags">${tagsMarkup}</div>
+                    </div>
                 </div>
-                
+
                 <div class="modal-mobile-gallery">
                     ${galleryMarkup}
                 </div>
-                
-                <div class="modal-project-desc">
-                    <p>${langData.desc}</p>
+
+                <div class="modal-padded">
+                    <div class="modal-project-desc">
+                        <p>${langData.desc}</p>
+                    </div>
                 </div>
             `;
         } else {
