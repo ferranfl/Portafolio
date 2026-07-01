@@ -207,8 +207,8 @@ Combino lógica estructurada de programación con habilidades de sistemas: despl
                 case 'skills':
                     responseLine.innerHTML = `[TECNOLOGÍAS]
 • <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, XML, React Native, Tailwind CSS
-• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, MySQL, Postgres, Supabase
-• <span class="cmd-highlight">Herramientas:</span> Git, Docker, Bash, Gemini AI, Expo Go
+• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, PHP, MySQL, Postgres, Supabase
+• <span class="cmd-highlight">Herramientas:</span> Git, Docker, Bash, Laravel, WordPress, Gemini AI, Expo Go
 • <span class="cmd-highlight">Blandas:</span> Comunicación, Trabajo en Equipo, Resolutivo, Adaptabilidad, Aprendizaje Rápido`;
                     break;
                     
@@ -301,8 +301,8 @@ I combine structured programming logic with systems engineering: containerized d
                 case 'skills':
                     responseLine.innerHTML = `[TECH STACK]
 • <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, XML, React Native, Tailwind CSS
-• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, MySQL, Postgres, Supabase
-• <span class="cmd-highlight">Tools:</span> Git, Docker, Bash, Gemini AI, Expo Go
+• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, PHP, MySQL, Postgres, Supabase
+• <span class="cmd-highlight">Tools:</span> Git, Docker, Bash, Laravel, WordPress, Gemini AI, Expo Go
 • <span class="cmd-highlight">Soft Skills:</span> Communication, Teamwork, Problem Solver, Adaptability, Quick Learner`;
                     break;
                     
