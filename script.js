@@ -109,6 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.placeholder = translation;
             }
         });
+
+        // Update CV download link and filename dynamically based on language
+        const cvLink = document.querySelector('.cv-link');
+        if (cvLink) {
+            if (lang === 'en') {
+                cvLink.href = 'cv/cv-en.pdf';
+                cvLink.setAttribute('download', 'CV_Ferran_Farina_EN.pdf');
+            } else {
+                cvLink.href = 'cv/cv-es.pdf';
+                cvLink.setAttribute('download', 'CV_Ferran_Farina_ES.pdf');
+            }
+        }
         
         // Reset typewriter animations to prevent text overlaps
         charIndex = 0;
