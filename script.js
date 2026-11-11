@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
     let roleIndex = 0;
-    let charIndex = 0;
+    // El primer rol ya viene escrito en el HTML (para buscadores): la animación arranca desde ahí
+    let charIndex = typewriterElement && typewriterElement.textContent === rolesByLang.es[0] ? rolesByLang.es[0].length : 0;
     let isDeleting = false;
     let typeSpeed = 100;
 
@@ -92,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function translatePage(lang) {
+        // Keep the document language in sync (accessibility + crawlers that run JS)
+        document.documentElement.lang = lang;
+
         // Translate elements carrying data-translate attributes
         const translatables = document.querySelectorAll('[data-translate]');
         translatables.forEach(el => {
@@ -129,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear terminal output log history on language changes
         if (terminalOutputContainer) {
             terminalOutputContainer.innerHTML = '';
+        }
+
+        // Re-render icons injected by the translated HTML
+        if (window.lucide) {
+            lucide.createIcons();
         }
     }
 
@@ -211,23 +220,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                 case 'about':
                     responseLine.innerHTML = `[SOBRE MÍ]
-Graduado en SMIX por el ITB, graduado en DAW por la Escola del Treball y actualmente cursando ASIX en el Institut Puig Castellar. Especializado en backend, APIs robustas y administración de sistemas.
+Desarrollador Full Stack. Graduado en SMX por el ITB, graduado en DAW por la Escola del Treball y actualmente cursando ASIX en el Institut Puig Castellar.
 
-Combino lógica estructurada de programación con habilidades de sistemas: despliegue y orquestación con Docker, desarrollo de scripts en Bash para automatización, administración avanzada de servidores Linux y bases de datos relacionales. Mi enfoque principal consiste en unir código eficiente con infraestructuras seguras y altamente disponibles.`;
+Combino desarrollo web (React, PHP, SQL) con administración de sistemas: automatización con PowerShell, Bash y Microsoft Entra ID (Azure AD), servidores Linux y Windows Server, contenedores con Docker e infraestructura en Cloudflare. Mi enfoque consiste en unir código eficiente con infraestructuras seguras y altamente disponibles.`;
                     break;
                     
                 case 'skills':
                     responseLine.innerHTML = `[TECNOLOGÍAS]
-• <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, XML, React Native, Tailwind CSS
-• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, PHP, MySQL, Postgres, Supabase
-• <span class="cmd-highlight">Herramientas:</span> Git, Docker, Bash, Laravel, WordPress, Azure, Herramientas Microsoft, Gemini AI, Expo Go
-• <span class="cmd-highlight">Blandas:</span> Comunicación, Trabajo en Equipo, Resolutivo, Adaptabilidad, Aprendizaje Rápido`;
+• <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, React, React Native, Tailwind CSS, XML
+• <span class="cmd-highlight">Backend y BBDD:</span> Node.js, PHP, Laravel, Java, MySQL, PostgreSQL, Supabase, WordPress
+• <span class="cmd-highlight">Sistemas y Cloud:</span> Linux, Windows Server, Active Directory, Azure, Entra ID, PowerShell, Bash, Docker, Cloudflare
+• <span class="cmd-highlight">Herramientas:</span> Git, Herramientas Microsoft, SEO técnico, Gemini AI, Expo Go
+• <span class="cmd-highlight">Blandas:</span> Comunicación, Trabajo en equipo, Resolutivo, Adaptabilidad, Aprendizaje rápido`;
                     break;
                     
                 case 'projects':
                     responseLine.innerHTML = `[PROYECTOS]
 1. <span class="cmd-highlight">WhoPayNow:</span> App móvil inteligente para dividir gastos con escaneo de tickets mediante IA.
-Escribe <span class="cmd-highlight">socials</span> para ver el código.`;
+Haz clic en la tarjeta del proyecto para ver los detalles.`;
                     break;
                     
                 case 'education':
@@ -236,20 +246,20 @@ Escribe <span class="cmd-highlight">socials</span> para ver el código.`;
    Institut Puig Castellar | 2026 - Presente
 2. <span class="cmd-highlight">DAW (Desarrollo de Aplicaciones Web)</span>
    Escola del Treball de Barcelona | 2024 - 2026
-3. <span class="cmd-highlight">SMIX (Sistemas Microinformáticos y Redes)</span>
+3. <span class="cmd-highlight">SMX (Sistemas Microinformáticos y Redes)</span>
    Institut Tecnològic de Barcelona (ITB) | 2022 - 2024`;
                     break;
                     
                 case 'experience':
                     responseLine.innerHTML = `[EXPERIENCIA LABORAL]
-1. <span class="cmd-highlight">Desarrollador de Aplicaciones & Web</span>
-   BAU — Centro Universitario de Artes y Diseño de Barcelona | Marzo de 2026 - Presente
-   • Transición a contrato regular. Responsable de la gestión y optimización de las aplicaciones y portales web de la universidad, liderando el desarrollo continuo del sistema de administración interna.
-2. <span class="cmd-highlight">Desarrollador de Aplicaciones & Web (Prácticas)</span>
-   BAU — Centro Universitario de Artes y Diseño de Barcelona | Julio de 2025 - Febrero de 2026
-   • Gestión de las plataformas web y aplicaciones de la universidad, además del diseño y desarrollo de una nueva aplicación para la gestión interna universitaria.
-3. <span class="cmd-highlight">Soporte IT / Prácticas Internacionales</span>
-   VINOR SERVIZ LTD - Sofía, Bulgaria | Junio de 2023
+1. <span class="cmd-highlight">Desarrollador Full Stack</span>
+   BAU, Centre Universitari d'Arts i Disseny | Marzo de 2026 - Presente
+   • Responsable de las aplicaciones y portales web de la universidad y del desarrollo continuo del sistema de gestión universitaria (UMS). Automatización de usuarios y permisos con PowerShell y Microsoft Entra ID, SEO técnico e infraestructura en VPS y Cloudflare.
+2. <span class="cmd-highlight">Desarrollador Full Stack (Prácticas)</span>
+   BAU, Centre Universitari d'Arts i Disseny | Julio de 2025 - Febrero de 2026
+   • Gestión de las plataformas web y aplicaciones de la universidad, y diseño y desarrollo de un nuevo sistema de gestión universitaria (UMS).
+3. <span class="cmd-highlight">Técnico de Soporte TI (Prácticas Erasmus+)</span>
+   VINOR SERVIZ LTD - Sofía, Bulgaria | Junio de 2024
    • Tareas de soporte técnico, redes locales y ofimática realizadas íntegramente en inglés.`;
                     break;
                     
@@ -261,15 +271,14 @@ Escribe <span class="cmd-highlight">socials</span> para ver el código.`;
                 case 'contact':
                     responseLine.innerHTML = `[CONTACTO]
 • Email: <a href="mailto:contactferranfl@gmail.com" style="color: var(--neon-cyan)">contactferranfl@gmail.com</a>
-• Formulario: Rellena los datos en el bloque ".env" y haz submit.`;
+• LinkedIn: <a href="https://www.linkedin.com/in/ferran-farinya/" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan)">linkedin.com/in/ferran-farinya</a>`;
                     break;
                     
                 case 'socials':
                     responseLine.innerHTML = `[SOCIALS]
-• GitHub: <a href="https://github.com" target="_blank" style="color: var(--neon-purple)">github.com/ferran</a>
-• LinkedIn: <a href="https://linkedin.com" target="_blank" style="color: var(--neon-purple)">linkedin.com/in/ferran</a>`;
+• LinkedIn: <a href="https://www.linkedin.com/in/ferran-farinya/" target="_blank" rel="noopener noreferrer" style="color: var(--neon-purple)">linkedin.com/in/ferran-farinya</a>`;
                     break;
-                    
+
                 case 'clear':
                     terminalOutputContainer.innerHTML = '';
                     responseLine = null; // Don't append empty response
@@ -305,23 +314,24 @@ Escribe <span class="cmd-highlight">help</span> para ver la lista de comandos v�
                     
                 case 'about':
                     responseLine.innerHTML = `[ABOUT ME]
-Graduate in SMIX from ITB, graduate in DAW from Escola del Treball, and currently studying ASIX at Institut Puig Castellar. Specialized in backend, robust APIs, and systems administration.
+Full Stack Developer. Graduate in SMX from ITB, graduate in DAW from Escola del Treball, and currently studying ASIX at Institut Puig Castellar.
 
-I combine structured programming logic with systems engineering: containerized deployment and orchestration with Docker, task automation with Bash scripting, advanced Linux server administration, and relational database management. My primary goal is bridging clean, efficient code with secure and highly available system architectures.`;
+I combine web development (React, PHP, SQL) with systems administration: automation with PowerShell, Bash and Microsoft Entra ID (Azure AD), Linux and Windows Server administration, Docker containers and Cloudflare infrastructure. My goal is bridging clean, efficient code with secure and highly available systems.`;
                     break;
                     
                 case 'skills':
                     responseLine.innerHTML = `[TECH STACK]
-• <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, XML, React Native, Tailwind CSS
-• <span class="cmd-highlight">Backend & DB:</span> Node.js, Java, PHP, MySQL, Postgres, Supabase
-• <span class="cmd-highlight">Tools:</span> Git, Docker, Bash, Laravel, WordPress, Azure, Microsoft Tools, Gemini AI, Expo Go
+• <span class="cmd-highlight">Frontend:</span> HTML, CSS, JavaScript, TypeScript, React, React Native, Tailwind CSS, XML
+• <span class="cmd-highlight">Backend & DB:</span> Node.js, PHP, Laravel, Java, MySQL, PostgreSQL, Supabase, WordPress
+• <span class="cmd-highlight">Systems & Cloud:</span> Linux, Windows Server, Active Directory, Azure, Entra ID, PowerShell, Bash, Docker, Cloudflare
+• <span class="cmd-highlight">Tools:</span> Git, Microsoft Tools, Technical SEO, Gemini AI, Expo Go
 • <span class="cmd-highlight">Soft Skills:</span> Communication, Teamwork, Problem Solver, Adaptability, Quick Learner`;
                     break;
                     
                 case 'projects':
                     responseLine.innerHTML = `[FEATURED PROJECTS]
 1. <span class="cmd-highlight">WhoPayNow:</span> Smart mobile app to split group expenses with AI receipt scanning.
-Type <span class="cmd-highlight">socials</span> to see links to repositories.`;
+Click the project card to see the details.`;
                     break;
                     
                 case 'education':
@@ -330,38 +340,37 @@ Type <span class="cmd-highlight">socials</span> to see links to repositories.`;
    Institut Puig Castellar | 2026 - Present
 2. <span class="cmd-highlight">DAW (Web Application Development)</span>
    Escola del Treball de Barcelona | 2024 - 2026
-3. <span class="cmd-highlight">SMIX (Microcomputer Systems and Networks)</span>
+3. <span class="cmd-highlight">SMX (Microcomputer Systems and Networks)</span>
    Institut Tecnològic de Barcelona (ITB) | 2022 - 2024`;
                     break;
                     
                 case 'experience':
                     responseLine.innerHTML = `[WORK EXPERIENCE]
-1. <span class="cmd-highlight">Desarrollador de Aplicaciones & Web</span>
-   BAU — Centro Universitario de Artes y Diseño de Barcelona | Marzo de 2026 - Presente
-   • Transición a contrato regular. Responsable de la gestión y optimización de las aplicaciones y portales web de la universidad, liderando el desarrollo continuo del sistema de administración interna.
-2. <span class="cmd-highlight">Desarrollador de Aplicaciones & Web (Prácticas)</span>
-   BAU — Arts and Design College of Barcelona | Julio de 2025 - Febrero de 2026
-   • Gestión de las plataformas web y aplicaciones de la universidad, además del diseño y desarrollo de una nueva aplicación para la gestión interna universitaria.
-3. <span class="cmd-highlight">IT Support Practices / International Internship</span>
-   VINOR SERVIZ LTD - Sofia, Bulgaria | June 2023
-   • Support tasks, local networking, and office automation (conducted in English).`;
+1. <span class="cmd-highlight">Full Stack Developer</span>
+   BAU, Centre Universitari d'Arts i Disseny | March 2026 - Present
+   • Responsible for the university's web applications and portals and for the ongoing development of the University Management System (UMS). User and permission automation with PowerShell and Microsoft Entra ID, technical SEO, and VPS and Cloudflare infrastructure.
+2. <span class="cmd-highlight">Full Stack Developer (Internship)</span>
+   BAU, Centre Universitari d'Arts i Disseny | July 2025 - February 2026
+   • Management of the university's web platforms and applications, and design and development of a new University Management System (UMS).
+3. <span class="cmd-highlight">IT Support Technician (Erasmus+ Internship)</span>
+   VINOR SERVIZ LTD - Sofia, Bulgaria | June 2024
+   • Support tasks, local networking, and office automation (conducted entirely in English).`;
                     break;
                     
                 case 'certifications':
-                    responseLine.innerHTML = `[CERTIFICACIONES]
+                    responseLine.innerHTML = `[CERTIFICATIONS]
 • No certifications registered at the moment.`;
                     break;
                     
                 case 'contact':
                     responseLine.innerHTML = `[CONTACT]
 • Email: <a href="mailto:contactferranfl@gmail.com" style="color: var(--neon-cyan)">contactferranfl@gmail.com</a>
-• Form: Fill in the ".env" block form on the page and submit.`;
+• LinkedIn: <a href="https://www.linkedin.com/in/ferran-farinya/" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan)">linkedin.com/in/ferran-farinya</a>`;
                     break;
                     
                 case 'socials':
                     responseLine.innerHTML = `[SOCIALS]
-• GitHub: <a href="https://github.com" target="_blank" style="color: var(--neon-purple)">github.com/ferran</a>
-• LinkedIn: <a href="https://linkedin.com" target="_blank" style="color: var(--neon-purple)">linkedin.com/in/ferran</a>`;
+• LinkedIn: <a href="https://www.linkedin.com/in/ferran-farinya/" target="_blank" rel="noopener noreferrer" style="color: var(--neon-purple)">linkedin.com/in/ferran-farinya</a>`;
                     break;
                     
                 case 'clear':
@@ -404,38 +413,6 @@ Type <span class="cmd-highlight">help</span> to view all valid commands.`;
     }
 
 
-    // --- CONTACT FORM HANDLER (.env simulation) ---
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Show establishing connection status
-            formStatus.textContent = currentLang === 'es' ? 'CONECTANDO...' : 'CONNECTING...';
-            formStatus.className = 'form-status';
-            
-            setTimeout(() => {
-                formStatus.textContent = currentLang === 'es' ? 'ENVIANDO_DATOS...' : 'SENDING_DATA...';
-                
-                setTimeout(() => {
-                    formStatus.textContent = currentLang === 'es' ? 'SUCCESS: Envío establecido.' : 'SUCCESS: Connection established.';
-                    formStatus.className = 'form-status success';
-                    
-                    // Reset Form
-                    contactForm.reset();
-                    
-                    // Clean success message after 5 seconds
-                    setTimeout(() => {
-                        formStatus.textContent = '';
-                        formStatus.className = 'form-status';
-                    }, 5000);
-                    
-                }, 1200);
-            }, 800);
-        });
-    }
     // --- PROJECT DETAILS DATA ---
     const projectDetails = {
         whopaynow: {
@@ -477,8 +454,8 @@ Type <span class="cmd-highlight">help</span> to view all valid commands.`;
     if (projectCards && projectModal) {
         projectCards.forEach(card => {
             card.addEventListener('click', (e) => {
-                // If clicking links inside project footer, do not open modal
-                if (e.target.closest('.proj-link')) {
+                // If clicking external links inside project footer, do not open modal
+                if (e.target.closest('a.proj-link')) {
                     return;
                 }
                 const id = card.getAttribute('data-project-id');
@@ -518,10 +495,10 @@ Type <span class="cmd-highlight">help</span> to view all valid commands.`;
 
         if (proj.layout === 'mobile') {
             // Generate side-by-side mini phone mockups gallery
-            const galleryMarkup = proj.images.map(img => `
+            const galleryMarkup = proj.images.map((img, i) => `
                 <div class="phone-mockup-mini">
                     <div class="phone-screen-mini">
-                        <img src="${img}" alt="Screenshot of ${proj.title}">
+                        <img src="${img}" alt="${currentLang === 'en' ? `${proj.title} app screen ${i + 1}` : `Pantalla ${i + 1} de la app ${proj.title}`}" loading="lazy" decoding="async">
                     </div>
                 </div>
             `).join('');

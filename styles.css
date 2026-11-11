@@ -486,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.75rem;
 }
 
-.box-header h3 {
+.box-header h2 {
     font-size: 1.25rem;
 }
 
@@ -505,7 +505,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.1rem;
 }
 
-.skills-cat h4 {
+.skills-cat h3 {
     font-size: 0.8rem;
     color: var(--text-secondary);
     margin-bottom: 0.4rem;
@@ -580,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
 }
 
-.project-content h3 {
+.project-content h2 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
@@ -814,7 +814,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.25rem;
 }
 
-.timeline-content h5 {
+.timeline-content h3 {
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.15rem;
